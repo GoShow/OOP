@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace TheSlum
+﻿namespace TheSlum.Items
 {
+    using System;
+    using TheSlum;
+
     public abstract class Item : GameObject
     {
         protected Item(string id, int healthEffect, int defenseEffect, int attackEffect)

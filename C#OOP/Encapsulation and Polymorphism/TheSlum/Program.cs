@@ -7,7 +7,7 @@ namespace TheSlum
     {
         static void Main(string[] args)
         {
-            Engine engine = new Engine();
+            Engine engine = new CustomEngine();
             engine.Run();
         }
     }
