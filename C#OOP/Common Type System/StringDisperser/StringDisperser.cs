@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 
 namespace StringDisperser
 {
     public class StringDisperser : IComparable<StringDisperser>, IEnumerable
     {
-        public StringDisperser(string firstName, string middleName, string lastName)
+        private string[] text;
+        public StringDisperser(params string[] text)
         {
-            this.FirstName = firstName;
-            this.MiddleName = middleName;
-            this.LastName = lastName;
+            this.Text = text;
         }
 
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
-        public string LastName { get; set; }
+        public string[] Text
+        {
+            get { return this.text; }
+
+            set
+            {
+                if (value.Length == 0)
+                {
+                    throw new ArgumentNullException("text", "Text array can't be empty");
+                }
+
+                this.text = value;
+            }
+        }
 
         public override bool Equals(object obj)
         {
@@ -23,15 +34,8 @@ namespace StringDisperser
             {
                 return false;
             }
-            if (!Equals(this.FirstName, stringDisperser.FirstName))
-            {
-                return false;
-            }
-            if (!Equals(this.MiddleName, stringDisperser.MiddleName))
-            {
-                return false;
-            }
-            if (!Equals(this.LastName, stringDisperser.LastName))
+
+            if (this.Text.Equals(stringDisperser))
             {
                 return false;
             }
@@ -43,41 +47,52 @@ namespace StringDisperser
         {
             return Equals(string1, string2);
         }
+
         public static bool operator !=(StringDisperser string1, StringDisperser string2)
         {
             return !Equals(string1, string2);
         }
+
         public override int GetHashCode()
         {
-            int hashCode = this.FirstName.GetHashCode() ^ this.MiddleName.GetHashCode() ^ this.LastName.GetHashCode();
+            int hashCode = this.Text.GetHashCode();
             return hashCode;
         }
 
         public override string ToString()
         {
-            string fullName = this.FirstName + " " + this.MiddleName + " " + this.LastName;
-            return fullName;
+            string result = String.Join(", ", this.Text);         
+            return result;
         }
 
         public object Clone()
         {
-            return new StringDisperser(this.FirstName, this.MiddleName, this.LastName);
+            string[] newTextArray = new string[this.Text.Length];
+            for (int i = 0; i < newTextArray.Length; i++)
+            {
+                newTextArray[i] = this.Text[i];
+            }
+
+            return new StringDisperser(newTextArray);
         }
 
         public int CompareTo(StringDisperser other)
         {
-            string firstWholeString = this.FirstName + this.MiddleName + this.LastName;
-            string secondWholeString = other.FirstName + other.MiddleName + other.LastName;
+            return this.ConcatenateText(this.Text).CompareTo(other.ConcatenateText(other.text));
+        }
 
-            return firstWholeString.CompareTo(secondWholeString);
+        private string ConcatenateText(string[] array)
+        {
+            string wholeString = String.Join("", this.Text);
+            return wholeString;
         }
 
         public IEnumerator GetEnumerator()
         {
-            string wholeString = this.FirstName + this.MiddleName + this.LastName;
-            for (int i = 0; i < wholeString.Length; i++)
+            string totalString = this.ConcatenateText(this.Text);
+            for (int i = 0; i < totalString.Length; i++)
             {
-                yield return wholeString[i];
+                yield return totalString[i];
             }
         }
     }
