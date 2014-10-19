@@ -1,0 +1,2 @@
+INDEX VERSION 1.127+E:\SoftUni\OOP\JavaOOP\Geometry\.metadata\.plugins\org.eclipse.jdt.core
+4247675838.index
