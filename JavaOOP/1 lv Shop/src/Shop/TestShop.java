@@ -116,5 +116,6 @@ public class TestShop {
 		for (Product product : ageRestrictedProducts) {
 			System.out.println(product);
 		}
+		
 	}
 }

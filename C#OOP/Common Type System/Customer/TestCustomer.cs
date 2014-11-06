@@ -23,7 +23,6 @@ namespace Customer
             Console.WriteLine("Pesho Peshev HashCode is: {0}", peshoPeshev.GetHashCode());
 
             var nasko = (Customer)peshoPeshev.Clone();
-            nasko.FirstName = "Nasko";
             nasko.MiddleName = "Atanasov";
             nasko.LastName = "Naskov";
             Console.WriteLine();

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Shapes</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    <h1>The task is working but it's not finished!</h1>
+    <h1>The time was not enough for me but it's from scratch and the code is all mine.</h1>
+    <h1>TODO: refactor repeating code, validation, and Z-index task!</h1>
+    <h2>Canvas Geometry API</h2>
+    <section>
+        <fieldset>
+            <label for="x">X:</label>
+            <input id="x" type="number" value="0"/>
+            <label for="y">Y:</label>
+            <input id="y" type="number" value="0"/>
+            <label for="color">Color:</label>
+            <input id="color" type="color"/>
+        </fieldset>
+        <label for="selectShape">Shape: </label>
+        <select id="selectShape">
+            <option value="rectangle">Rectangle</option>
+            <option value="triangle">Triangle</option>
+            <option value="circle">Circle</option>
+            <option value="segment">Segment</option>
+            <option value="point">Point</option>
+        </select>
+
+        <div id="shapeParameters">
+            <fieldset>
+                <label for="width">Width:</label>
+                <input id="width" type="number" value="0"/>
+                <label for="height">Height:</label>
+                <input id="height" type="number" value="0"/>
+            </fieldset>
+        </div>
+        <div id="displayDescription">
+        </div>
+        <button id="submitButton">Add</button>
+    </section>
+    <canvas id="myCanvas"></canvas>
+    <script src="scripts/shapes.js"></script>
+    <script src="scripts/engine.js"></script>
+</body>
+</html>
