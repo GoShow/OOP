@@ -1,0 +1,57 @@
+body, section, fieldset, input, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 19px;
+}
+
+section {
+    margin-bottom: 10px;
+}
+
+.innerSection {
+    border: 2px solid #999;
+    padding: 10px;
+}
+
+
+
+#container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px;
+    border:2px solid #999;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+h2 {
+    text-align: right;
+    pading: 10px;
+}
+
+fieldset {
+    border: none;
+}
+
+#addItem {
+    width: 26%;
+    margin: 10px 0 10px 75%;
+}
+
+label {
+    margin: -27px 0 7px  19px;
+    border-bottom: 1px solid #000;
+    display: block;
+    width: 97%;
+    padding: 3px
+}
+
+.green {
+    background-color: green;
+}

@@ -1,0 +1,60 @@
+h1, h3 {
+    margin: 0;
+}
+
+section {
+    width: 50%;
+    border: solid 2px #000;
+    margin: auto;
+    padding: 15px;
+}
+
+section h1 {
+    text-align: center;
+}
+
+section > div {
+    border: solid 2px #858585;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+article div:first-child {
+    border: solid 2px #585858;
+    padding: 8px;
+}
+
+article > div:last-child {
+    padding: 8px;
+    text-align: right;
+}
+
+article > div h3 {
+    text-align: right;
+}
+
+article div div input {
+    width: 5%;
+}
+
+article div div label {
+    width: 90%;
+    display: inline-block;
+    border-bottom: solid 1px #000;
+}
+
+article div div input:checked + label {
+    background-color: #90EE90;
+}
+
+.hideError{
+    display: none;
+}
+
+.showError{
+    color: #f00;
+    border: solid 1px #f00;
+    display: block;
+    padding: 8px;
+    margin-top: 5px;
+}

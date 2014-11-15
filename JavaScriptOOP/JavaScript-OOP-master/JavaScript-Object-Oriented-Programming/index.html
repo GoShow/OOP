@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet">
+    <title>Canvas Geometry API</title>
+    <script src="Shapes.js" defer></script>
+    <script src="Canvas.js" defer></script>
+    <script src="Geometry-API.js" defer></script>
+</head>
+<body>
+<header>Canvas Geometry API</header>
+<main>
+    <section>
+        <div>
+            <label for="x">X: </label><input name="x" type="text" id="x" value="0">
+            <label for="y">Y: </label><input name="y" type="text" id="y" value="0">
+            <label for="color">Color: </label><input name="color" type="color" id="color">
+        </div>
+        <div>
+            <label>Shape</label>
+            <select id="shape" name="shape">
+                <option value="0">Point</option>
+                <option value="1">Triangle</option>
+                <option value="2">Rectangle</option>
+                <option value="3">Circle</option>
+                <option value="4">Segment</option>
+            </select>
+        </div>
+
+        <div id="secondPoint">
+            <label for="x2">X2: </label><input name="x2" type="text" id="x2" value="0">
+            <label for="y2">Y2: </label><input name="y2" type="text" id="y2" value="0">
+        </div>
+
+        <div id="thirdPoint">
+            <label for="x3">X3: </label><input name="x3" type="text" id="x3" value="0">
+            <label for="y3">Y3: </label><input name="y3" type="text" id="y3" value="0">
+        </div>
+
+        <div id="rectangle">
+            <label for="width">Width: </label><input name="width" type="text" id="width" value="0">
+            <label for="height">Height: </label><input name="height" type="text" id="height" value="0">
+        </div>
+
+        <div id="circle">
+            <label for="radius">Radius: </label><input name="radius" type="text" id="radius" value="0">
+        </div>
+
+        <button id="addButton" type="button">Add</button>
+
+        <div>
+            <select id="shapes" name="shapes" size="10">
+            </select>
+
+            <div id="buttons">
+                <button id="up" type="button">&uArr;</button>
+                <button id="down" type="button">&dArr;</button>
+                <button id="remove" type="button">-</button>
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <canvas id="canvas" width="400px" height="450px"></canvas>
+    </section>
+</main>
+</body>
+</html>
